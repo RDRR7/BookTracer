@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Book Tracer</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link href="default1.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<img src=<%= image_path("Logo2.png") %> id="imgL" alt="LOGO" style="width:228px;height: 100px">
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a><%= link_to 'Homepage', root_path %></a></li>
+					<li><a href="#" accesskey="2" title="">Community</a></li>
+					<li><a href="#" accesskey="6" title="">Categories</a></li>
+					<% if user_signed_in? %>
+						<li><a href="#" accesskey="4" title="">My Books</a></li>
+						<li><a href="#" accesskey="5" title="">My Profile</a></li>
+						<li>
+							<%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+						</li>
+					<% else %>
+						<li>
+							<%= link_to('Login', new_user_session_path)  %>  
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<br><br><br><br><br>
+
+	<div class="z-depth-1 grey lighten-4  container">
+		<div class="row">
+			<div class="col s4">
+				<img class="responsive-img" style="width: 250px;" src=<%= image_path("book.jpg") %> />
+			</div>
+			<div class="col s8">
+				<h3>ALLEGIANT</h3>
+				<p>
+					The faction-based society that Tris Prior once believed in is shattered - fractured by violence and power struggles and scarred by loss and betrayal. So when offered a chance to explore the world past the limits she's known, Tris is ready. Perhaps beyond the fence, she and Tobias will find a simple new life together, free from complicated lies, tangled loyalties, and painful memories.
+
+					But Tris's new reality is even more alarming than the one she left behind. Old discoveries are quickly rendered meaningliess. Explosive new truths change the hearts of those she loves. And once again, Tris must battle to comprehend to complexities of human nature - and of herself - while facing impossible choices about courage, allegiance, sacrifice, and love.
+
+					Told from a riveting dual perspective, ALLEGIANT, by #1 New York Times best-selling author Veronica Roth, brings the DIVERGENT series to a powerful conclusion while revealing the secrets of the dystopian world that has captivated millions of readers in DIVERGENT and INSURGENT
+				</p>
+				<div class="divider"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
