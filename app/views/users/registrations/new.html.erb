@@ -1,0 +1,112 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <style>
+    body{
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main{
+      flex: 1 0 auto;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fff;
+    }
+
+    h5{
+      font-size: 40px;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .input-field input[type=date]:focus + label,
+    .input-field input[type=text]:focus + label,
+    .input-field input[type=text]:focus + label,
+    .input-field input[type=email]:focus + label,
+    .input-field input[type=password]:focus + label {
+      color: #e91e63;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=email]:focus,
+    .input-field input[type=password]:focus {
+      border-bottom: 2px solid #e91e63;
+      box-shadow: none;
+    }
+  </style>
+
+
+</head>
+<body>
+  <main>
+    <center>
+      <img class="responsive-img" style="width: 250px;" src=<%= image_path("Logo2.png") %> />
+
+      <h5 class="indigo-text">Register</h5>
+
+      <center>
+        <div class="container">
+          <div class="z-depth-1 grey lighten-4 row" style=" width: 400px; display: inline-block; padding: 30px 46px 0px 46px; border: 1px solid #EEE;">
+
+            <div class='row'>
+              <div class='row'>
+                <label for='email'>Email</label>
+                <div class='input-field col s12'>
+                  <%= f.text_field :email, :class=>'validate'%>
+                </div>
+              </div>
+
+              <div class='row'>
+                <label for='password'>Password</label>
+                <div class='input-field col s12'>
+                  <%= f.password_field :password, :class=>'validate'%>
+                </div>
+              </div>    
+              
+              <div class='row'>
+                <label for='password'>Password confirmation</label>
+                <div class='input-field col s12'>
+                  <%= f.password_field :password_confirmation, :class=>'validate'%>
+                </div>
+              </div>    
+
+              <br/>
+              <center>
+                <div class='row'>
+                  <div class="actions">
+                    <%= f.submit "Sign me up", :class=>'col s12 btn btn-large waves-effect indigo'%>
+                  </div>
+                  <% end %>
+                </div>
+              </center>
+            </form>
+          </div>
+        </div>
+      </center>
+      <a><%= link_to('Already have an account? Login?', new_user_session_path)  %></a>
+    </center>
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
