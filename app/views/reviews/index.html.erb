@@ -16,16 +16,16 @@
 
   <tbody>
     <% @reviews.each do |review| %>
-      <tr>
-        <td><%= review.book %></td>
-        <td><%= review.author %></td>
-        <td><%= review.reviewer %></td>
-        <td><%= review.link %></td>
-        <td><%= review.summary %></td>
-        <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= review.book %></td>
+      <td><%= review.author %></td>
+      <td><%= review.reviewer %></td>
+      <td><%= review.link %></td>
+      <td><%= review.summary %></td>
+      <td><%= link_to 'Show', review %></td>
+      <td><%= link_to 'Edit', edit_review_path(review) %></td>
+      <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
