@@ -1,0 +1,29 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.nav-wrapper {
+  background-color: #2980b9;
+}
+
+.header {
+  color: white;
+  padding-top: 30px;
+  background-color: #2980b9;
+}
+
+.card-image {
+  margin: 10px;
+}
+
+.card-content {
+  font-weight: bold;
+}
+
+.card.horizontal {
+  background-color: #ecf0f1;
+}
+
+
+/*# sourceMappingURL=profile.css.map */
