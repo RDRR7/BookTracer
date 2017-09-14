@@ -33,6 +33,35 @@
 
 </style>
 
+<div id="header-wrapper">
+  <div id="header" class="container">
+    <div id="logo">
+      <img src=<%= image_path("Logo2.png") %> id="imgL" alt="LOGO" style="width:228px;height: 100px">
+    </div>
+    <div id="menu">
+      <ul>
+        <li>
+          <a><%= link_to 'Homepage', root_path %></a>
+        </li>
+        <li>
+          <a href="#" accesskey="2" title="">Community</a>
+        </li>
+        <li>
+          <a href="#" accesskey="6" title="">Categories</a>
+        </li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to('Reviews', reviews_path) %>
+        </li>
+        <li>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="header" style="background: #fff;">
   <div class="row" style="background: #fff;">
     <div class="col s12" style="background: #fff; border-bottom: 1px solid rgba(0,0,0,0.1)">
@@ -81,12 +110,12 @@
         <div class="row">
           <div class="input-field col s12">
             <%= form.text_field :summary, id: :review_summary , :class => "validate"%>
-            <label for="email">Summary</label>
+            <label for="email">Title</label>
           </div>
         </div>
 
         <div class="actions">
-          <%= form.submit %>
+          <%= form.submit :class => 'btn' %>
         </div>
         <% end %>
 
