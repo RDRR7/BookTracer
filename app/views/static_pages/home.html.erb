@@ -1,106 +1,112 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title></title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+		<link href="default.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href="fonts.css" rel="stylesheet" type="text/css" media="all"/>
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+		<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
-</head>
-<body>
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<img src=<%= image_path("Logo2.png") %> id="imgL" alt="LOGO" style="width:228px;height: 100px">
+	</head>
+	<body>
+		<div id="header-wrapper">
+			<div id="header" class="container">
+				<div id="logo">
+					<img src=<%= image_path("Logo2.png") %> id="imgL" alt="LOGO" style="width:228px;height: 100px">
+				</div>
+				<div id="menu">
+					<ul>
+						<li><%= link_to 'Homepage', root_path %></li>
+						<li>
+							<a href="#" accesskey="2" title="">Community</a>
+						</li>
+						<li>
+							<a href="#" accesskey="6" title="">About us</a>
+						</li>
+						<% if user_signed_in? %>
+						<li>
+							<%= link_to('Index', static_pages_logged_path) %>
+						</li>
+						<li>
+							<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+						</li>
+					<% else %>
+						<li>
+							<%= link_to('Login', new_user_session_path)  %>
+						</li>
+						<li>
+							<%= link_to('Sign up', new_user_registration_path)  %>
+						</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+			<div id="banner" class="container">
+				<img src=<%= image_path("img.jpg") %> alt="" class="image image-full"/>
+			</div>
 		</div>
-		<div id="menu">
-			<ul>
-				<li><%= link_to 'Homepage', root_path %></li>
-				<li><a href="#" accesskey="2" title="">Community</a></li>
-				<li><a href="#" accesskey="6" title="">About us</a></li>
-				<% if user_signed_in? %>
-				<li>
-					<%= link_to('Index', static_pages_logged_path) %>
-				</li>
-					<li>
-						<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-					</li>
-				<% else %>
-					<li>
-						<%= link_to('Login', new_user_session_path)  %>
-					</li>
-					<li>
-						<%= link_to('Sign up', new_user_registration_path)  %>
-					</li>
-				<% end %>
-			</ul>
+		<div id="page-wrapper">
+			<div id="page" class="container">
+				<h2>Welcome to our website</h2>
+				<p>This is
+					<strong>Book Tracer</strong>, a free, easy to use, community oriented, book reviews site.
+				</p>
+			</div>
+			<div id="featured" class="container">
+				<center>
+					<div class="tbox1">
+						<h2>WHAT WE OFFER</h2>
+						<center>
+							<img src=<%= image_path("books.png") %> alt="" style="width: 180px"/>
+						</center>
+						<p>We offer our users a wide range of book reviews.</p>
+						<a href="#" class="button">DISCOVER</a>
+					</div>
+				</center>
+				<center>
+					<div class="tbox2">
+						<h2>WHO WE ARE</h2>
+						<center>
+							<img src=<%= image_path("commu.png") %> alt="" style="width: 180px"/>
+						</center>
+						<p>A community with one common interest: making the most out of our reads.</p>
+						<a href="#" class="button">COUNT ME IN</a>
+					</div>
+				</center>
+			</div>
 		</div>
-	</div>
-	<div id="banner" class="container">
-		<img src=<%= image_path("img.jpg") %> alt="" class="image image-full" />
-	</div>
-</div>
-<div id="page-wrapper">
-	<div id="page" class="container">
-		<h2>Welcome to our website</h2>
-		<p>This is <strong>Book Tracer</strong>, a free, easy to use, community oriented, book reviews site.  </p>
-	</div>
-	<div id="featured" class="container">
-		<center>
-		<div class="tbox1">
-			<h2>WHAT WE OFFER</h2>
+		<div id="footer" class="container">
 			<center>
-				<img src=<%= image_path("books.png") %> alt="" style="width: 180px" />
+				<h5>LAST BOOKS ADDED</h5>
 			</center>
-			<p>We offer our users a wide range of book reviews.</p>
-			<a href="#" class="button">DISCOVER</a>
+			<div class="boxA">
+				<img src=<%= image_path("img02.jpg") %> width="225" height="320" alt=""/>
+				<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+				<a href="#" class="button">See Reviews</a>
+			</div>
+			<div class="boxB">
+				<img src=<%= image_path("img03.jpg") %> width="225" height="320" alt=""/>
+				<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+				<a href="#" class="button">See Reviews</a>
+			</div>
+			<div class="boxD">
+				<img src=<%= image_path("img04.jpg") %> width="225" height="320" alt=""/>
+				<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+				<a href="#" class="button">See Reviews</a>
+			</div>
+			<div class="boxC">
+				<img src=<%= image_path("img05.jpg") %> width="225" height="320" alt=""/>
+				<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+				<a href="#" class="button">See Reviews</a>
+			</div>
 		</div>
-		</center>
-		<center>
-		<div class="tbox2">
-			<h2>WHO WE ARE</h2>
-			<center>
-				<img src=<%= image_path("commu.png") %> alt="" style="width: 180px" />
-			</center>
-			<p>A community with one common interest: making the most out of our reads.</p>
-			<a href="#" class="button">COUNT ME IN</a>
+		<div id="copyright" class="container">
+			<p>&copy; BookTracer. All rights reserved.</p>
 		</div>
-		</center>
-	</div>
-</div>
-<div id="footer" class="container">
-	<center>
-		<h5>LAST BOOKS ADDED</h5>
-	</center>
-	<div class="boxA">
-		<img src=<%= image_path("img02.jpg") %> width="225" height="320" alt="" />
-		<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-		<a href="#" class="button">See Reviews</a>
-	</div>
-	<div class="boxB">
-		<img src=<%= image_path("img03.jpg") %> width="225" height="320" alt="" />
-		<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-		<a href="#" class="button">See Reviews</a>
-	</div>
-	<div class="boxD">
-		<img src=<%= image_path("img04.jpg") %> width="225" height="320" alt="" />
-		<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-		<a href="#" class="button">See Reviews</a>
-	</div>
-	<div class="boxC">
-		<img src=<%= image_path("img05.jpg") %> width="225" height="320" alt="" />
-		<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-		<a href="#" class="button">See Reviews</a>
-	</div>
-</div>
-<div id="copyright" class="container">
-	<p>&copy; BookTracer. All rights reserved.</p>
-</div>
-</body>
+	</body>
 </html>
